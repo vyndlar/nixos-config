@@ -122,7 +122,7 @@
 
   environment.extraInit = ''
     export PATH="$HOME/.config/emacs/bin:$PATH"
-  ''
+  '';
 
   programs.starship = {
 
