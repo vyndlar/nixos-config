@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    
+
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
       # inputs.nixpkgs.follows = "nixpkgs"; # idk if needed
@@ -16,7 +16,13 @@
       modules = [
         ./configuration.nix
 
-	nix-flatpak.nixosModules.nix-flatpak
+        
+	###############
+        ### FLATPAK ###
+        ###############
+        
+        nix-flatpak.nixosModules.nix-flatpak
+
       ];
     };
   };

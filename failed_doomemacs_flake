@@ -1,0 +1,115 @@
+# flake.nix
+{
+  description = "Nix-Flatpak + DoomEmacs flake";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+
+    doom-emacs = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
+      # Optional, but often useful to keep pkgs in sync:
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, nix-flatpak, emacs-overlay, doom-emacs, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+
+      # Emacs with PGTK (Wayland-native) + overlays
+      emacs-pgtk =
+        pkgs.emacs29-pgtk
+          .overrideAttrs
+          (old: {
+            # If you want extra packages or tweaks, do it here or via the overlay.
+          });
+    in
+    {
+      nixosConfigurations.myHost = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./configuration.nix
+
+          # Use the nix-doom-emacs-unstraightened NixOS module
+          doom-emacs.nixosModules.default
+
+          # Configure Doom Emacs declaratively
+          {
+            # Use the PGTK Emacs build for Wayland
+            programs.doom-emacs = {
+              enable = true;
+              package = emacs-pgtk;
+
+              # Your Doom config (modules, packages, etc.)
+              # This corresponds to init.el, packages.el, config.el content.
+              doom = {
+                # Example: enable some common modules; adjust to your taste.
+                modules = [
+                  ":completion company"
+                  ":completion vertico"
+                  ":editor evil"
+                  ":editor format"
+                  ":editor highlight"
+                  ":emacs dired"
+                  ":emacs undo"
+                  ":ui doom"
+                  ":ui hl-todo"
+                  ":ui ligatures"
+                  ":ui modeline"
+                  ":ui treemacs"
+                  ":ui vim-gutter-fringes"
+                  ":lang data"
+                  ":lang json"
+                  ":lang markdown"
+                  ":lang python"
+                  ":lang rust"
+                  ":lang yaml"
+                  ":tools lsp"
+                  ":tools magit"
+                  ":tools term"
+                ];
+
+                # If you want to declaratively install extra ELPA/MELPA packages:
+                packages = [
+                  # Example:
+                  # "elpy"
+                  # "rust-mode"
+                ];
+              };
+
+              # Optional: set your user-emacs-directory inside /etc or /nix-store
+              # Usually you still want it under /home, but the *config* is declarative.
+              # doomDir = "/etc/doom.d";  # if you want to drive everything from /etc/doom.d
+            };
+
+            # Link your local doom.d (init.el, config.el, packages.el, etc.)
+            environment.etc."doom.d".source = ./doom.d;
+
+            # Make sure the Emacs service (if you use it) uses the same package
+            services.emacs = {
+              enable = true;
+              package = emacs-pgtk;
+              # If you use the emacs service, point it at the same doom.d:
+              # defaultEditor = true;  # optional
+            };
+
+            # Also put the Doom Emacs package in systemPackages for direct use
+            environment.systemPackages = [
+              doom-emacs.packages.${system}.default
+            ];
+          }
+
+          # Flatpak support
+          nix-flatpak.nixosModules.nix-flatpak
+        ];
+      };
+    };
+}
