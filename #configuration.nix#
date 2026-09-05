@@ -58,6 +58,27 @@
     options = "caps:swapescape,compose:ralt"; # swap esc and caps, ralt used to type special chars
   };
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+
+    fcitx5 = {
+
+      waylandFrontend = true;
+
+      addons = with pkgs; [
+        
+	# Chinese / Pinyin
+        qt6Packages.fcitx5-chinese-addons
+
+	# Integration
+	fcitx5-gtk
+	qt6Packages.fcitx5-qt
+	qt6Packages.fcitx5-configtool
+      ];
+    };
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -146,29 +167,53 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+
+    # terminal tools
     neovim
+    emacs # :D
+    tmux
+
+    # commands
     git
     curl
     fastfetch
+
     htop
-    emacs
+    btop
 
+    # apps, general
     alacritty
-
     spotify
-    anki
+    obsidian
     qbittorrent
+
+    # apps, gaming
     steam
+    prismlauncher # minecraft
+
+    # apps, productivity
+    onlyoffice-desktopeditors
+    anki
+
+    # apps, language learning
+    goldendict-ng
+
+    # apps, services
+    tailscale
   ];
     
     services.openssh.enable = true;
+    services.flatpak.enable = true;
 
     programs.git.enable = true;
 
     nixpkgs.config.allowUnfree = true;
-
+    
+    fonts.fontconfig.enable = true;
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
+      wqy_zenhei
+      noto-fonts-cjk-sans
     ];
 
 

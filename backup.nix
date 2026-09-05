@@ -151,14 +151,11 @@
     curl
     fastfetch
     htop
-    emacs
 
     alacritty
 
     spotify
-    anki
-    qbittorrent
-    steam
+    pkgs.anki
   ];
     
     services.openssh.enable = true;
