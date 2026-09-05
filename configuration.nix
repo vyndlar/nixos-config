@@ -161,7 +161,6 @@
     spotify
     anki
     qbittorrent
-    steam
     prismlauncher
     
     todoist-electron
@@ -176,7 +175,7 @@
       # discord, proton mail, stremio, sober
       { appId = "com.discordapp.Discord"; origin = "flathub"; }
       { appId = "me.proton.Mail"; origin = "flathub"; }
-      { appId = "com.stremio.Stremio"; origin = "flathub"; }
+     #{ appId = "com.stremio.Stremio"; origin = "flathub"; }
       { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
     ];
 
@@ -185,6 +184,10 @@
     #################
 
     programs.git.enable = true;
+    programs.steam = {
+      enable = true;
+    };
+    programs.gamemode.enable = true;
 
     nixpkgs.config.allowUnfree = true;
 
