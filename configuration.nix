@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -169,12 +171,27 @@
     
     services.openssh.enable = true;
 
+    services.flatpak.enable = true;
+    services.flatpak.packages = [
+      # discord, proton mail, stremio, sober
+      { appId = "com.discordapp.Discord"; origin = "flathub"; }
+      { appId = "me.proton.Mail"; origin = "flathub"; }
+      { appId = "com.stremio.Stremio"; origin = "flathub"; }
+      { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
+    ];
+
+    #################
+    ### ADD FONTS ###
+    #################
+
     programs.git.enable = true;
 
     nixpkgs.config.allowUnfree = true;
 
     fonts.packages = with pkgs; [
       nerd-fonts.jetbrains-mono
+      wqy_zenhei
+      noto-fonts-cjk-sans
     ];
 
 
