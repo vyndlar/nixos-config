@@ -87,7 +87,7 @@
     description = "Dane";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
+    #  kdePackages.kate
     #  thunderbird
     ];
 
@@ -103,6 +103,9 @@
   # Install firefox.
   programs.firefox.enable = true;
   programs.nix-index.enable = true;
+  programs.gamemode.enable = true;
+  programs.git.enable = true;
+  programs.steam.enable = true;
 
   programs.zsh = {	# zsh setup
     enable = true;
@@ -155,12 +158,28 @@
     };
   };
 
-  programs.git.enable = true;
-    programs.steam = {
-      enable = true;
-  };
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.zsh}/bin/bash";
+    shortcut = "a";
+    baseIndex = 1;
+    newSession = true;
+    escapeTime = 0;
+    secureSocket = false;
+    mouse = true;
+    clock24 = true;
+    historyLimit = 10000;
 
-  programs.gamemode.enable = true;
+    plugins = with pkgs; [
+      tmuxPlugins.better-mouse-mode
+    ];
+    extraConfig = ''
+      set -g default-terminal "xterm-256color"
+      bind | split-window -h -c "#{pane_current_path}"
+      bind - split window -v -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}"
+    '';
+  };
 
 
   # List packages installed in system profile.
@@ -170,10 +189,7 @@
     git
     curl
     fastfetch
-    tmux
-   #comma # use any program without installing it: $, cowsay hello
-    # nix-index-database
-
+    python315
 
     # apps, terminal (TUI)
     neovim
