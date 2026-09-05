@@ -166,7 +166,7 @@
     newSession = true;
     escapeTime = 0;
     secureSocket = false;
-    mouse = true;
+    # mouse = true;
     clock24 = true;
     historyLimit = 10000;
 
