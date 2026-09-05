@@ -102,6 +102,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.nix-index.enable = true;
 
   programs.zsh = {	# zsh setup
     enable = true;
@@ -161,13 +162,16 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    # terminal tools
+    # terminal tools (CLI)
     git
     curl
     fastfetch
     tmux
+   #comma # use any program without installing it: $, cowsay hello
+    # nix-index-database
 
-    # apps, terminal
+
+    # apps, terminal (TUI)
     neovim
     emacs # D: // :D
     htop
@@ -185,8 +189,12 @@
     # apps, entertainment
     spotify
 
+    # apps, system health
+    kdePackages.filelight
+
     # apps, other
     qbittorrent
+    kdePackages.kdeconnect-kde
     
   ];
     
@@ -200,8 +208,8 @@
     services.flatpak.packages = [
       # discord, proton mail, stremio, sober
       { appId = "com.discordapp.Discord"; origin = "flathub"; }
-      { appId = "me.proton.Mail"; origin = "flathub"; }
-     #{ appId = "com.stremio.Stremio"; origin = "flathub"; }
+     #{ appId = "me.proton.Mail"; origin = "flathub"; } //// no subscription so..
+     #{ appId = "com.stremio.Stremio"; origin = "flathub"; } //// not working idk why...
       { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
     ];
 
