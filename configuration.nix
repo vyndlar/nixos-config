@@ -147,11 +147,12 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     neovim
+    emacs # D: // :D
     git
     curl
     fastfetch
     htop
-    emacs
+    btop
 
     alacritty
 
@@ -159,6 +160,11 @@
     anki
     qbittorrent
     steam
+    prismlauncher
+    
+    todoist-electron
+    whatsapp-electron
+    tailscale
   ];
     
     services.openssh.enable = true;
