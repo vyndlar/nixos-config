@@ -95,6 +95,11 @@
 
   users.defaultUserShell = pkgs.zsh;
 
+
+  ################
+  ### PROGRAMS ###
+  ################
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -145,29 +150,50 @@
     };
   };
 
+  programs.git.enable = true;
+    programs.steam = {
+      enable = true;
+  };
+
+  programs.gamemode.enable = true;
+
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    neovim
-    emacs # D: // :D
+    # terminal tools
     git
     curl
     fastfetch
+    tmux
+
+    # apps, terminal
+    neovim
+    emacs # D: // :D
     htop
     btop
 
+    # apps, productivity
     alacritty
-
-    spotify
     anki
-    qbittorrent
-    prismlauncher
-    
     todoist-electron
     whatsapp-electron
-    tailscale
+
+    # apps, games
+    prismlauncher # MINECRAFT
+
+    # apps, entertainment
+    spotify
+
+    # apps, other
+    qbittorrent
+    
   ];
     
+    ################
+    ### SERVICES ###
+    ################
+
     services.openssh.enable = true;
 
     services.flatpak.enable = true;
@@ -179,16 +205,7 @@
       { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
     ];
 
-    #################
-    ### ADD FONTS ###
-    #################
-
-    programs.git.enable = true;
-    programs.steam = {
-      enable = true;
-    };
-    programs.gamemode.enable = true;
-
+    
     nixpkgs.config.allowUnfree = true;
 
     fonts.packages = with pkgs; [
@@ -198,6 +215,26 @@
     ];
 
 
+    
+    ##################
+    ### NETWORKING ###
+    ##################
+
+    services.tailscale.enable = true;
+    networking.nftables.enable = true;
+    networking.firewall = {
+      enable = true;
+      trustedInterfaces = [ config.services.tailscale.interfaceName ];
+      allowedUDPPorts = [ config.services.tailscale.port ];
+    };
+
+    systemd.services.tailscaled.serviceConfig.Environment = [
+      "TS_DEBUG_FIREWALL_MODE=nftables"
+    ];
+
+    systemd.network.wait-online.enable = false;
+    boot.initrd.systemd.network.wait-online.enable = false;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -206,17 +243,7 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
+  
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
