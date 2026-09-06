@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./alacritty-mocha.nix
+      # ./alacritty-mocha.nix
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -206,6 +206,8 @@
     fastfetch
     python315
 
+    alacritty
+
     # apps, terminal (TUI)
     neovim
     emacs # D: // :D
@@ -213,7 +215,6 @@
     btop
 
     # apps, productivity
-    alacritty
     anki
     todoist-electron
     whatsapp-electron

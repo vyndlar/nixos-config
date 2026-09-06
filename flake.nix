@@ -17,7 +17,7 @@
 
   outputs = { self, nixpkgs, nix-flatpak, nix-index-database, ... }: {
     nixosConfigurations.myHost = nixpkgs.lib.nixosSystem {
-      system = "x86_64";
+      system = "x86_64-linux";
       modules = [
         ./configuration.nix
 
