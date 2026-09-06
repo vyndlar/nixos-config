@@ -160,25 +160,38 @@
 
   programs.tmux = {
     enable = true;
-    shell = "${pkgs.zsh}/bin/bash";
+    # shell = "${pkgs.bash}/bin/bash";
     shortcut = "a";
     baseIndex = 1;
     newSession = true;
     escapeTime = 0;
     secureSocket = false;
-    # mouse = true;
     clock24 = true;
-    historyLimit = 10000;
+    historyLimit = 1000;
 
     plugins = with pkgs; [
       tmuxPlugins.better-mouse-mode
+      tmuxPlugins.yank
+      tmuxPlugins.sensible
+      tmuxPlugins.vim-tmux-navigator
+      tmuxPlugins.catppuccin
     ];
     extraConfig = ''
       set -g default-terminal "xterm-256color"
+      set-option -sa terminal-overrides ",xterm*:Tc"
+
+      # window splits
       bind | split-window -h -c "#{pane_current_path}"
       bind - split window -v -c "#{pane_current_path}"
       bind c new-window -c "#{pane_current_path}"
-    '';
+
+      # shift + alt + H/L for prev/next window
+      bind -n M-H previous-window;
+      bind -n M-L next-window;
+
+      # mouse on (duh)
+      set -g mouse on
+      '';
   };
 
 
@@ -241,6 +254,8 @@
       wqy_zenhei
       noto-fonts-cjk-sans
     ];
+    fonts.fontconfig.enable = true;
+    fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
 
 
     
