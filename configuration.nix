@@ -211,7 +211,7 @@
     fastfetch
     python315
     gcc
-    manpages
+    man-pages
 
     # apps, terminal (TUI)
     neovim
