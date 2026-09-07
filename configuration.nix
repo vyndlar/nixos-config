@@ -107,6 +107,7 @@
   programs.nix-index.enable = true;
   programs.gamemode.enable = true;
   programs.git.enable = true;
+  programs.zoxide.enable = true;
   programs.steam.enable = true;
 
   programs.zsh = {	# zsh setup
@@ -117,6 +118,10 @@
 
     histSize = 1000;
     histFile = "$HOME/.histfile";
+
+    shellAliases = {
+      emacs = "emacs -nw";
+    };
 
     ohMyZsh = {
       enable = true;
@@ -205,8 +210,8 @@
     curl
     fastfetch
     python315
-
-    alacritty
+    gcc
+    manpages
 
     # apps, terminal (TUI)
     neovim
@@ -218,6 +223,7 @@
     anki
     todoist-electron
     whatsapp-electron
+    alacritty
 
     # apps, games
     prismlauncher # MINECRAFT
@@ -259,7 +265,6 @@
     ];
     fonts.fontconfig.enable = true;
     fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
-
 
     
     ##################
