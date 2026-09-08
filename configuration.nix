@@ -62,6 +62,22 @@
     options = "caps:swapescape,compose:ralt"; # swap esc and caps, ralt used to type special chars
   };
 
+  i18n.inputMethod = { # ALLOWS ME TO TYPE MULTIPLE LANGS
+    enable = true;
+    type = "fcitx5";
+
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        qt6Packages.fcitx5-chinese-addons # CHINESE SUPPORT
+
+	fcitx5-gtk
+	qt6Packages.fcitx5-qt
+	qt6Packages.fcitx5-configtool
+      ];
+    };
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -224,6 +240,7 @@
     todoist-electron
     whatsapp-electron
     alacritty
+    goldendict-ng
 
     # apps, games
     prismlauncher # MINECRAFT
