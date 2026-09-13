@@ -291,7 +291,7 @@
     fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
 
     environment.sessionVariables = {
-      GOLDENDICT_FORCE_XCB = "1";
+      # GOLDENDICT_FORCE_XCB = "1";
     };
 
     
