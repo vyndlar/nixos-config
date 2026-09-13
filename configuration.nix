@@ -248,6 +248,7 @@
     whatsapp-electron
     alacritty
     goldendict-ng
+    onlyoffice-desktopeditors
     # goldendict-x11
 
     # apps, games
