@@ -248,7 +248,7 @@
     whatsapp-electron
     alacritty
     goldendict-ng
-    goldendict-x11
+    # goldendict-x11
 
     # apps, games
     prismlauncher # MINECRAFT
