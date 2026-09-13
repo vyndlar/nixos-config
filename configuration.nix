@@ -78,6 +78,11 @@
     };
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -262,6 +267,8 @@
     ################
 
     services.openssh.enable = true;
+
+    services.blueman.enable = true; # GUI bluetooth manager
 
     services.flatpak.enable = true;
     services.flatpak.packages = [
