@@ -155,6 +155,7 @@
     export PATH="$HOME/.config/emacs/bin:$PATH"
   '';
 
+
   programs.starship = {
 
     enable = true;
@@ -288,6 +289,10 @@
     ];
     fonts.fontconfig.enable = true;
     fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
+
+    environment.sessionVariables = {
+      GOLDENDICT_FORCE_XCB = "1";
+    };
 
     
     ##################
