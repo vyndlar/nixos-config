@@ -259,6 +259,7 @@
     # apps, other
     qbittorrent
     kdePackages.kdeconnect-kde
+    solaar
     
   ];
     
@@ -267,8 +268,6 @@
     ################
 
     services.openssh.enable = true;
-
-    services.blueman.enable = true; # GUI bluetooth manager
 
     services.flatpak.enable = true;
     services.flatpak.packages = [
