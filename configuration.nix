@@ -130,6 +130,7 @@
   programs.git.enable = true;
   programs.zoxide.enable = true;
   programs.steam.enable = true;
+  programs.xwayland.enable = true;
 
   programs.zsh = {	# zsh setup
     enable = true;
@@ -247,6 +248,7 @@
     whatsapp-electron
     alacritty
     goldendict-ng
+    goldendict-x11
 
     # apps, games
     prismlauncher # MINECRAFT
