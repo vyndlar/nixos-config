@@ -1,8 +1,10 @@
 {
-  description = "Nix-Flatpak + Index Database flake";
+  description = "Nix-Flatpak + Index Database + Spicetify flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";

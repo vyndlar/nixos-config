@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
+      inputs.spicetify-nix.nixosModules.default
+
       # ./alacritty-mocha.nix
     ];
   
@@ -223,6 +225,54 @@
       set -g mouse on
       '';
   };
+
+  programs.spicetify =
+  let 
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  in
+  {
+
+    ### https://wiki.nixos.org/wiki/Spicetify-Nix
+
+    enabled = true;
+
+    enabledExtensions = with spicePkgs.extensions; [
+      ### https://gerg-l.github.io/spicetify-nix/extensions.html
+      loopyLoop
+      popupLyrics
+      betterGenres
+      copyLyrics
+      allOfArtist
+      aiBandBlocker
+      sessionStats
+    ];
+
+    enabledCustomApps = with spicePkgs.apps; [
+      ### https://gerg-l.github.io/spicetify-nix/custom-apps.html
+    ];
+
+    enabledSnippets = with spicePkgs.snippets; [
+      ### https://github.com/spicetify/marketplace/blob/main/resources/snippets.json
+      ### to get package names, run:
+      ### nix eval --impure --json --expr 'builtins.attrNames ((builtins.getFlake "github:Gerg-L/spicetify-nix").legacyPackages.x86_64-linux.snippets)'
+
+
+      ### MORE INFO:
+      ### https://gerg-l.github.io/spicetify-nix/snippets.html
+
+
+      hideMadeForYou
+      darkLyrics
+      disableRecommendations
+      hideWhatsNewButton
+      pokemonAdventure
+    ];
+    
+    ### https://gerg-l.github.io/spicetify-nix/themes.html
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
+  }
+
 
 
   # List packages installed in system profile.
