@@ -301,6 +301,7 @@
     onlyoffice-desktopeditors
     kicad
     gimp
+    vscodium
 
     # apps, games
     prismlauncher # MINECRAFT
