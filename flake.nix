@@ -17,9 +17,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, nix-flatpak, nix-index-database, ... }: {
+  outputs = inputs@{ self, nixpkgs, nix-flatpak, nix-index-database, spicetify-nix, ... }: {
     nixosConfigurations.myHost = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; }; # supposed to make spicetify work tbh idk what this does
       modules = [
         ./configuration.nix
 
@@ -38,6 +39,8 @@
 	nix-index-database.nixosModules.default
 
 	{ programs.nix-index-database.comma.enable = true; } # enable comma for amazingness
+
+	# spicetify-nix.nixosModules.default
 
       ];
     };
