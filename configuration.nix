@@ -309,7 +309,7 @@
     prismlauncher # MINECRAFT
 
     # apps, entertainment
-    spotify
+    # spotify ### COMMENTED OUT BC SPICETIFY AUTO-INSTALLS. 
 
     # apps, system health
     kdePackages.filelight
