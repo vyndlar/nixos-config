@@ -249,7 +249,8 @@
     alacritty
     goldendict-ng
     onlyoffice-desktopeditors
-    # goldendict-x11
+    kicad
+    gimp
 
     # apps, games
     prismlauncher # MINECRAFT
