@@ -271,7 +271,7 @@
     ### https://gerg-l.github.io/spicetify-nix/themes.html
     theme = spicePkgs.themes.catppuccin;
     colorScheme = "mocha";
-  }
+  };
 
 
 
