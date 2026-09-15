@@ -4,7 +4,7 @@
 
 # { config, pkgs, ... }:
 
-{ inputs, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports =
@@ -236,7 +236,7 @@
 
     ### https://wiki.nixos.org/wiki/Spicetify-Nix
 
-    enabled = true;
+    enable = true;
 
     enabledExtensions = with spicePkgs.extensions; [
       ### https://gerg-l.github.io/spicetify-nix/extensions.html
