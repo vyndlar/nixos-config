@@ -240,13 +240,18 @@
 
     enabledExtensions = with spicePkgs.extensions; [
       ### https://gerg-l.github.io/spicetify-nix/extensions.html
-      loopyLoop
-      popupLyrics
-      betterGenres
-      copyLyrics
-      allOfArtist
-      aiBandBlocker
-      sessionStats
+      loopyLoop # specific portion of a track to loop over
+      popupLyrics # name
+      playlistIcons # give playlists icons in the left sidebar
+      fullAlbumDate # name
+      playlistIntersection # compare two playlists and make new playlists
+      betterGenres # read it bru
+      copyLyrics # lets you... copy lyrics
+      savePlaylists # so you don't have to make a new playlist and copy all the songs
+      queueTime # remaining time in queue
+      allOfArtist # create a playlist w/ all songs of an artist
+      aiBandBlocker # no more ai bands
+      sessionStats # do i need to explain this..
     ];
 
     enabledCustomApps = with spicePkgs.apps; [
@@ -267,7 +272,7 @@
       darkLyrics
       disableRecommendations
       hideWhatsNewButton
-      pokemonAdventure
+      roundedNowPlaying
     ];
     
     ### https://gerg-l.github.io/spicetify-nix/themes.html
