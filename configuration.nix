@@ -250,7 +250,7 @@
       savePlaylists # so you don't have to make a new playlist and copy all the songs
       queueTime # remaining time in queue
       allOfArtist # create a playlist w/ all songs of an artist
-      bestMoment # select and listen to a specific segment of the track
+      # bestMoment # select and listen to a specific segment of the track
       aiBandBlocker # no more ai bands
       sessionStats # do i need to explain this..
       focusMode # a mode with only album art visible
