@@ -318,6 +318,10 @@
     kicad
     gimp
     vscodium
+    ### mail
+    kdepim-runtime
+    kontact
+    kmail
 
     # apps, games
     prismlauncher # MINECRAFT
