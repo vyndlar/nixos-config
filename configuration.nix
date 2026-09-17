@@ -322,6 +322,7 @@
     kdePackages.kdepim-runtime
     kdePackages.kontact
     kdePackages.kmail
+    kdePackages.kmail-account-wizard
 
     # apps, games
     prismlauncher # MINECRAFT
