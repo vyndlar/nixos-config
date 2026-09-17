@@ -319,9 +319,9 @@
     gimp
     vscodium
     ### mail
-    kdepim-runtime
-    kontact
-    kmail
+    kdePackages.kdepim-runtime
+    kdePackages.kontact
+    kdePackages.kmail
 
     # apps, games
     prismlauncher # MINECRAFT
