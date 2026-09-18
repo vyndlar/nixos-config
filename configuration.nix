@@ -353,6 +353,7 @@
      #{ appId = "me.proton.Mail"; origin = "flathub"; } //// no subscription so..
      #{ appId = "com.stremio.Stremio"; origin = "flathub"; } //// not working idk why...
       { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
+      { appId = "com.adilhanney.saber"; origin = "flathub"; } # notetaking; notability replacement
     ];
 
     
