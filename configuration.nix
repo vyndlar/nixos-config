@@ -309,7 +309,7 @@
     btop
 
     # apps, productivity
-    anki
+    # anki ////// MOVED TO FLATPAK FOR MORE FREQUENT UPDATES
     todoist-electron
     whatsapp-electron
     alacritty
@@ -356,6 +356,11 @@
       { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
       { appId = "com.adilhanney.saber"; origin = "flathub"; } # notetaking; notability replacement
       { appId = "org.freecad.FreeCAD"; origin = "flathub"; } # cad 3d
+      { appId = "org.ankiweb.Anki"; origin = "flathub"; }
+      { appId = "eu.jumplink.Learn6502"; origin = "flathub"; } # learn asm by making games
+      { appId = "com.rafaelmardojai.Blanket"; origin = "flathub"; } # Blanket - I was reccomended this idk abt it tho...
+      { appId = "com.vixalien.sticky"; origin = "flathub"; } # Sticky notes
+      { appId = "io.github.shonebinu.Brief"; origin = "flathub"; } # Like man pages but nicer :)
     ];
 
     
