@@ -351,12 +351,10 @@
     services.flatpak.packages = [
       # discord, proton mail, stremio, sober
       { appId = "com.discordapp.Discord"; origin = "flathub"; }
-     #{ appId = "me.proton.Mail"; origin = "flathub"; } //// no subscription so..
-     #{ appId = "com.stremio.Stremio"; origin = "flathub"; } //// not working idk why...
       { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
       { appId = "com.adilhanney.saber"; origin = "flathub"; } # notetaking; notability replacement
       { appId = "org.freecad.FreeCAD"; origin = "flathub"; } # cad 3d
-      { appId = "org.ankiweb.Anki"; origin = "flathub"; }
+      { appId = "net.ankiweb.Anki"; origin = "flathub"; }
       { appId = "eu.jumplink.Learn6502"; origin = "flathub"; } # learn asm by making games
       { appId = "com.rafaelmardojai.Blanket"; origin = "flathub"; } # Blanket - I was reccomended this idk abt it tho...
       { appId = "com.vixalien.sticky"; origin = "flathub"; } # Sticky notes
