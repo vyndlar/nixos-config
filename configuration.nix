@@ -337,6 +337,7 @@
     qbittorrent
     kdePackages.kdeconnect-kde
     solaar
+    rpi-imager
     
   ];
     
@@ -354,6 +355,7 @@
      #{ appId = "com.stremio.Stremio"; origin = "flathub"; } //// not working idk why...
       { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
       { appId = "com.adilhanney.saber"; origin = "flathub"; } # notetaking; notability replacement
+      { appId = "org.freecad.FreeCAD"; origin = "flathub"; } # cad 3d
     ];
 
     
