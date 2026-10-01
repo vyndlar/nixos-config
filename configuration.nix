@@ -147,6 +147,7 @@
 
     shellAliases = {
       emacs = "emacs -nw";
+      nixc = "nvim ~/.config/nixos/configuration.nix";
     };
 
     ohMyZsh = {
