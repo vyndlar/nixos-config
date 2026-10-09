@@ -127,7 +127,9 @@
   ### PROGRAMS ###
   ################
 
-  # Install firefox.
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-vbox" ];
+
   programs.firefox.enable = true;
   programs.nix-index.enable = true;
   programs.gamemode.enable = true;
