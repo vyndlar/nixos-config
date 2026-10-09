@@ -304,6 +304,8 @@
     python315
     gcc
     man-pages
+    nasm # Assembly compiler
+    tree
 
     # apps, terminal (TUI)
     neovim
