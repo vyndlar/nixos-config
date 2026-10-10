@@ -364,7 +364,7 @@
       { appId = "com.rafaelmardojai.Blanket"; origin = "flathub"; } # Blanket - I was reccomended this idk abt it tho...
       { appId = "com.vixalien.sticky"; origin = "flathub"; } # Sticky notes
       { appId = "io.github.shonebinu.Brief"; origin = "flathub"; } # Like man pages but nicer :)
-      { appId = "org.kde.okteta"; origin = "flathub" } # HEX viewer
+      { appId = "org.kde.okteta"; origin = "flathub"; } # HEX viewer
     ];
 
     
