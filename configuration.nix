@@ -306,6 +306,7 @@
     man-pages
     nasm # Assembly compiler
     tree
+    make
 
     # apps, terminal (TUI)
     neovim
