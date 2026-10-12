@@ -127,7 +127,7 @@
   ### PROGRAMS ###
   ################
 
-  virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "user-with-access-to-vbox" ];
 
   programs.firefox.enable = true;
@@ -308,6 +308,7 @@
     tree
     gnumake
     qemu
+    gdb
 
     # apps, terminal (TUI)
     neovim
