@@ -307,6 +307,7 @@
     nasm # Assembly compiler
     tree
     gnumake
+    qemu
 
     # apps, terminal (TUI)
     neovim
