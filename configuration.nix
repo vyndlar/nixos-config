@@ -326,6 +326,8 @@
     kicad
     gimp
     vscodium
+    ispell
+
     ### mail
     kdePackages.kdepim-runtime
     kdePackages.kontact
