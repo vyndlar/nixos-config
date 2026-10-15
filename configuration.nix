@@ -359,7 +359,7 @@
     services.flatpak.packages = [
       # discord, proton mail, stremio, sober
       { appId = "com.discordapp.Discord"; origin = "flathub"; }
-      { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
+      { appId = "org.vinegarhq.Sober"; origin = "flathub"; } # notetaking
       { appId = "com.adilhanney.saber"; origin = "flathub"; } # notetaking; notability replacement
       { appId = "org.freecad.FreeCAD"; origin = "flathub"; } # cad 3d
       { appId = "net.ankiweb.Anki"; origin = "flathub"; }
@@ -368,6 +368,7 @@
       { appId = "com.vixalien.sticky"; origin = "flathub"; } # Sticky notes
       { appId = "io.github.shonebinu.Brief"; origin = "flathub"; } # Like man pages but nicer :)
       { appId = "org.kde.okteta"; origin = "flathub"; } # HEX viewer
+      { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
     ];
 
     
