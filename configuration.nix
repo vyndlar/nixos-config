@@ -326,7 +326,10 @@
     kicad
     gimp
     vscodium
+
+    # Markdown, writing
     ispell
+    pandoc
 
     ### mail
     kdePackages.kdepim-runtime
@@ -370,7 +373,7 @@
       { appId = "com.vixalien.sticky"; origin = "flathub"; } # Sticky notes
       { appId = "io.github.shonebinu.Brief"; origin = "flathub"; } # Like man pages but nicer :)
       { appId = "org.kde.okteta"; origin = "flathub"; } # HEX viewer
-      { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
+      # { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
     ];
 
     
