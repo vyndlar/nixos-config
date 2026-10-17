@@ -301,31 +301,39 @@
     git
     curl
     fastfetch
-    python315
-    gcc
-    man-pages
-    nasm # Assembly compiler
     tree
-    gnumake
     qemu
+
+    # dev tools
+      # GENERAL
     gdb
+    gnumake
+    man-pages
+      # C
+    clang-tools
+    gcc
+      # RUST
+    rust-analyzer
+    rustc
+    cargo
+      # ASSEMBLY
+    nasm
+      # PYTHON D:
+    python315
 
     # apps, terminal (TUI)
     neovim
-    emacs # D: // :D
+    emacs
     htop
     btop
 
     # apps, productivity
-    # anki ////// MOVED TO FLATPAK FOR MORE FREQUENT UPDATES
     todoist-electron
     whatsapp-electron
     alacritty
     goldendict-ng
     onlyoffice-desktopeditors
     kicad
-    gimp
-    vscodium
 
     # Markdown, writing
     ispell
@@ -339,9 +347,6 @@
 
     # apps, games
     prismlauncher # MINECRAFT
-
-    # apps, entertainment
-    # spotify ### COMMENTED OUT BC SPICETIFY AUTO-INSTALLS. 
 
     # apps, system health
     kdePackages.filelight
