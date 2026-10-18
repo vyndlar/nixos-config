@@ -149,7 +149,9 @@
 
     shellAliases = {
       emacs = "emacs -nw";
-      nixc = "nvim ~/.config/nixos/configuration.nix";
+      nixc = "cd ~/.config/nixos && nvim ~/.config/nixos/configuration.nix";
+      nixd = "nix develop";
+      td = "pnpm tauri dev";
     };
 
     ohMyZsh = {
@@ -303,6 +305,7 @@
     fastfetch
     tree
     qemu
+    ripgrep
 
     # dev tools
       # GENERAL
@@ -312,7 +315,7 @@
       # C
     clang-tools
     gcc
-      # RUST
+      # RUST/TAURI
     rust-analyzer
     rustc
     cargo
