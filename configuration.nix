@@ -341,6 +341,7 @@
     # Markdown, writing
     ispell
     pandoc
+    texliveFull # MD Conversion
 
     ### mail
     kdePackages.kdepim-runtime
@@ -382,6 +383,7 @@
       { appId = "io.github.shonebinu.Brief"; origin = "flathub"; } # Like man pages but nicer :)
       { appId = "org.kde.okteta"; origin = "flathub"; } # HEX viewer
       # { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
+      { appId = "org.kde.kcolorchooser"; origin = "flathub"; } # color picker
     ];
 
     
