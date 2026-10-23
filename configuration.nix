@@ -384,6 +384,7 @@
       { appId = "org.kde.okteta"; origin = "flathub"; } # HEX viewer
       # { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
       { appId = "org.kde.kcolorchooser"; origin = "flathub"; } # color picker
+      { appId = "org.localsend.localsend_app"; origin = "flathub"; } # local send
     ];
 
     
