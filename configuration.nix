@@ -337,6 +337,7 @@
     goldendict-ng
     onlyoffice-desktopeditors
     kicad
+    gimp
 
     # Markdown, writing
     ispell
